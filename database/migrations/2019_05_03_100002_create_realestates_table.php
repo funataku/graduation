@@ -17,10 +17,11 @@ class CreateRealestatesTable extends Migration
             // 以下Migrations userの方からコピペ＋修正
                 $table->increments('id');
                 $table->string('name')->unique();
-                $table->timestamps();
                 
-            
-            // 以下新規追加
+                //ユーザーID。その人のだけ表示するため
+                // $table->integer('user_id')->nullable();
+                //エステートID。その人のだけ表示するため
+                $table->DATETIME('estate_id')->nullable();
                 // 住所＝address。nullable＝最悪登録しなくても良い
                 $table->string('address')->nullable()->unique();
                 // 緯度＝latitude
@@ -31,6 +32,7 @@ class CreateRealestatesTable extends Migration
                 $table->string('url_top')->nullable();
                 //URL(物件詳細)
                 $table->string('url_estate')->nullable()->unique();
+                $table->timestamps();
             
         });
     }

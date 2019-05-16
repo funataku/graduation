@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken(); //login,logout管理するcookie関連
                 //以下二つ自動で作られるので記載不要、エラーになる。
-                //$table->timestamps();
+            $table->timestamps();
                 //$table->dateTime('created_at');
         });
     }

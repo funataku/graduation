@@ -21,4 +21,14 @@ Route::post('/realestatesedit/{realestates}','RealestatesController@edit');
 Route::post('/realestates/update', 'RealestatesController@update');
 
 // 物件を削除
-Route::post('/realestates/delete/{realestates}','RealestatesController@destroy');
+Route::post('/realestate/{realestate}','RealestatesController@destroy');
+
+//mapを表示
+// Route::post('/realestatesmap/{realestate}','RealestatesController@map');
+
+//認証機能を使用する（php artisan make:auth　php artisan migrateで自動生成）
+Auth::routes();
+
+//追加されたファイル（php artisan make:auth　php artisan migrateで自動生成）
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'RealestatesController@index');
